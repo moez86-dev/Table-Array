@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الطلاب</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>إدارة بيانات الطلاب</h1>
+
+        <div class="icons-container">
+            <div class="icon" data-target="teacherModule">
+                <h2>بيانات المعلم</h2>
+            </div>
+            <div class="icon" data-target="studentModule">
+                <h2>إضافة طالب</h2>
+            </div>
+            <div class="icon" data-target="listModule">
+                <h2>قائمة الطلاب</h2>
+            </div>
+            <div class="icon" data-target="feesModule">
+                <h2>إجمالي الرسوم الشهرية</h2>
+            </div>
+        </div>
+
+        <div class="modules-container">
+            <div class="module" id="teacherModule">
+                <h2>بيانات المعلم</h2>
+                <form id="teacherForm">
+                    <label for="teacherName">اسم المعلم:</label>
+                    <input type="text" id="teacherName" name="teacherName" required>
+
+                    <label for="subject">المادة:</label>
+                    <input type="text" id="subject" name="subject" required>
+
+                    <button type="button" id="saveTeacher">حفظ</button>
+                </form>
+            </div>
+
+            <div class="module" id="studentModule">
+                <h2>إضافة طالب</h2>
+                <form id="studentForm">
+                    <label for="studentName">اسم الطالب:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+
+                    <label for="studentStage">المرحلة:</label>
+                    <select id="studentStage" name="studentStage" required>
+                        <option value="المرحلة الإبتدائية">المرحلة الإبتدائية</option>
+                        <option value="المرحلة الإعدادية">المرحلة الإعدادية</option>
+                        <option value="المرحلة الثانوية">المرحلة الثانوية</option>
+                    </select>
+
+                    <label for="studentGrade">الصف:</label>
+                    <select id="studentGrade" name="studentGrade" required>
+                        <!-- سيتم تعبئة الصفوف ديناميكياً بناءً على المرحلة المختارة -->
+                    </select>
+
+                    <label for="month">الشهر:</label>
+                    <select id="month" name="month" required>
+                        <option value="January">يناير</option>
+                        <option value="February">فبراير</option>
+                        <option value="March">مارس</option>
+                        <option value="April">أبريل</option>
+                        <option value="May">مايو</option>
+                        <option value="June">يونيو</option>
+                        <option value="July">يوليو</option>
+                        <option value="August">أغسطس</option>
+                        <option value="September">سبتمبر</option>
+                        <option value="October">أكتوبر</option>
+                        <option value="November">نوفمبر</option>
+                        <option value="December">ديسمبر</option>
+                    </select>
+
+                    <label for="monthlyFees">الرسوم الشهرية:</label>
+                    <input type="number" id="monthlyFees" name="monthlyFees" required>
+
+                    <button type="submit">إضافة الطالب</button>
+                </form>
+            </div>
+
+            <div class="module" id="listModule">
+                <h2>قائمة الطلاب</h2>
+                <ul id="studentList"></ul>
+            </div>
+
+            <div class="module" id="feesModule">
+                <h2>إجمالي الرسوم الشهرية</h2>
+                <label for="summaryMonth">اختر الشهر:</label>
+                <select id="summaryMonth" name="summaryMonth">
+                    <option value="January">يناير</option>
+                    <option value="February">فبراير</option>
+                    <option value="March">مارس</option>
+                    <option value="April">أبريل</option>
+                    <option value="May">مايو</option>
+                    <option value="June">يونيو</option>
+                    <option value="July">يوليو</option>
+                    <option value="August">أغسطس</option>
+                    <option value="September">سبتمبر</option>
+                    <option value="October">أكتوبر</option>
+                    <option value="November">نوفمبر</option>
+                    <option value="December">ديسمبر</option>
+                </select>
+
+                <label for="summaryGrade">اختر الصف:</label>
+                <select id="summaryGrade" name="summaryGrade">
+                    <!-- سيتم تعبئة الصفوف ديناميكياً بناءً على المرحلة المختارة في فلترة الرسوم الشهرية -->
+                </select>
+
+                <button id="calculateFees">حساب الإجمالي</button>
+                <div id="totalFees"></div>
+
+                <button id="exportExcel">تصدير إلى Excel</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>حقوق الملكية الفكرية محمد عبدالمعز 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

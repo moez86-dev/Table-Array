@@ -1,0 +1,155 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('image/pngtree-summer-math-tutoring-class-enrollment-background-material-image_783877.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(116, 164, 164, 0.9); /* جعل خلفية الكونتينر شفافة قليلاً */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+}
+
+.icons-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.icon {
+    background-color: #386e72;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1;
+    margin: 0 10px;
+}
+
+.icon:hover {
+    background-color: #2f5b5d;
+}
+
+.modules-container, .module {
+    display: none;
+}
+
+.module {
+    background-color: #386e72;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #fff;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #a35555;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+}
+
+li button {
+    background-color: #dc3545;
+    margin-left: 10px;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+#totalFees {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.9); /* نفس خلفية الكونتينر */
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    input, select, button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    .icons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon {
+        margin: 10px 0;
+    }
+}
